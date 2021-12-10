@@ -30,23 +30,19 @@ function showBookForm() {
   });
 }
 
-function gatherFormData() {
+function gatherFormData(returnData) {
   let submitBtn = document.querySelector('.submit-book');
   let author = document.querySelector('.author-input');
   let title = document.querySelector('.book-input');
   let pages = document.querySelector('.pages-input');
-  let readOrNot = document.querySelector('.read-or-not');
+  let read = document.querySelector('.read-or-not');
+  let form = document.querySelector('.form');
 
-  submitBtn.addEventListener('click', _ => {
-    let authorVal = author.value;
-    let titleVal = title.value;
-    let pagesVal = pages.value;
-    let readVal = readOrNot.checked;
-  });
+  //function to return form input values in an array
+  
 }
 
-function addBookToLibrary() {
-}
+// function addBookToLibrary() {}
 
 showBookForm();
 gatherFormData();
