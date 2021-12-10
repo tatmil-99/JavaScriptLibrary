@@ -1,7 +1,11 @@
 let myLibrary = [];
 
-function Book() {
-  // the constructor...
+// the constructor...
+function Book(author, title, pages, read) {
+  this.author = author
+  this.title = title
+  this.pages = pages
+  this.read = read
 }
 
 function showBookForm() {
@@ -34,10 +38,10 @@ function gatherFormData() {
   let readOrNot = document.querySelector('.read-or-not');
 
   submitBtn.addEventListener('click', _ => {
-    console.log(author.value);
-    console.log(title.value);
-    console.log(pages.value);
-    console.log(readOrNot.checked);
+    let authorVal = author.value;
+    let titleVal = title.value;
+    let pagesVal = pages.value;
+    let readVal = readOrNot.checked;
   });
 }
 
