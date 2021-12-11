@@ -38,7 +38,7 @@ function gatherFormData(addBookToLib) {
 
   let inputValues = [];
   form.addEventListener('submit', e => {
-    e.preventDefault();
+    //e.preventDefault();
 
     let inputs = [author, title, pages, read];
     inputs.forEach(input => {
@@ -49,12 +49,14 @@ function gatherFormData(addBookToLib) {
       }
     });
     addBookToLib(inputValues);
+    //form.reset();
   });
 }
 
 function addBookToLibrary(inputArr) {
   let newBook = new Book(...inputArr);
   myLibrary.push(newBook);
+  console.log(myLibrary)
 }
 
 showBookForm();
