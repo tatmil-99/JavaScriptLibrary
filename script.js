@@ -29,7 +29,7 @@ function showBookForm() {
   });
 }
 
-function gatherFormData(addBookObj) {
+function gatherFormData(addBookToLib) {
   let author = document.querySelector('.author-input');
   let title = document.querySelector('.book-input');
   let pages = document.querySelector('.pages-input');
@@ -39,7 +39,7 @@ function gatherFormData(addBookObj) {
   let inputValues = [];
   form.addEventListener('submit', e => {
     e.preventDefault();
-    
+
     let inputs = [author, title, pages, read];
     inputs.forEach(input => {
       if (input == read) {
@@ -48,7 +48,7 @@ function gatherFormData(addBookObj) {
         inputValues.push(input.value);
       }
     });
-    addBookObj(inputValues);
+    addBookToLib(inputValues);
   });
 }
 
