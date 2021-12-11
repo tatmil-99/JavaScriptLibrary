@@ -1,6 +1,5 @@
 let myLibrary = [];
 
-// the constructor...
 function Book(author, title, pages, read) {
   this.author = author
   this.title = title
@@ -30,32 +29,34 @@ function showBookForm() {
   });
 }
 
-function gatherFormData() {
+function gatherFormData(addBookObj) {
   let author = document.querySelector('.author-input');
   let title = document.querySelector('.book-input');
   let pages = document.querySelector('.pages-input');
   let read = document.querySelector('.read-or-not');
   let form = document.querySelector('.form');
 
-  //function to return form input values in an array
-  let values = [];
+  let inputValues = [];
   form.addEventListener('submit', e => {
     e.preventDefault();
+    
     let inputs = [author, title, pages, read];
     inputs.forEach(input => {
       if (input == read) {
-        values.push(input.checked)
+        inputValues.push(input.checked);
       } else {
-        values.push(input.value);
+        inputValues.push(input.value);
       }
     });
-    console.log(values);
-    //function to add book object to library
+    addBookObj(inputValues);
   });
 }
 
-// function addBookToLibrary() {}
+function addBookToLibrary(inputArr) {
+  let newBook = new Book(...inputArr);
+  myLibrary.push(newBook);
+}
 
 showBookForm();
-gatherFormData();
+gatherFormData(addBookToLibrary);
 
