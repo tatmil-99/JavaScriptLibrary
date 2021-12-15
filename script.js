@@ -30,9 +30,9 @@ function showBookForm() {
 }
 
 /*This function accepts two functions as arguments to avoid 
-repeating variables, but separate functionality. 
-It performs three actions: gathers form inputs, adds inputs to library, 
-and resets inputs for future object creation.*/
+repeating variables and to separate functionality. 
+It performs four actions: gathers form inputs, calls addBookToLib(), 
+then calls resetBookVals(), and then resets form.*/
 function gatherFormData(addBookToLib, resetBookVals) {
   let author = document.querySelector('.author-input');
   let title = document.querySelector('.book-input');
