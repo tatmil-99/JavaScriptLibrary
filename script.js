@@ -5,7 +5,7 @@ function Book(author, title, pages, read) {
   this.title = title
   this.pages = pages
   this.read = read
-}
+};
 
 showBookForm();
 gatherFormData();
